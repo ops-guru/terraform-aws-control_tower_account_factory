@@ -14,7 +14,7 @@ variable "trusted_entity_type" {
   default = "AWS"
 }
 
-variable "role_name" {
+variable "service_role_name" {
   default = "AWSAFTService"
 }
 
@@ -26,7 +26,7 @@ variable "aft_admin_session_arn" {
 }
 
 resource "aws_iam_role" "role" {
-  name = var.role_name
+  name = var.service_role_name
 
   assume_role_policy = templatefile("${path.module}/trust_policy.tpl",
     {
