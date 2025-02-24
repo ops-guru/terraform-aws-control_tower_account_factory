@@ -28,7 +28,7 @@ module "ct_management_exec_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  role_name             = "AWSAFTExecution-CT"
 }
 
 module "log_archive_exec_role" {
@@ -38,7 +38,7 @@ module "log_archive_exec_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  role_name             = "AWSAFTExecution-LogArchive"
 }
 
 module "audit_exec_role" {
@@ -48,7 +48,7 @@ module "audit_exec_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  role_name             = "AWSAFTExecution-Audit"
 }
 
 module "aft_exec_role" {
@@ -58,7 +58,7 @@ module "aft_exec_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  role_name             = "AWSAFTExecution"
 }
 
 
@@ -69,7 +69,7 @@ module "ct_management_service_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  service_role_name     = "AWSAFTService-CT"
 }
 
 module "log_archive_service_role" {
@@ -79,6 +79,7 @@ module "log_archive_service_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
+  service_role_name     = "AWSAFTService-LogArchive"
 }
 
 module "audit_service_role" {
@@ -88,7 +89,7 @@ module "audit_service_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  service_role_name     = "AWSAFTService-Audit"
 }
 
 module "aft_service_role" {
@@ -98,5 +99,5 @@ module "aft_service_role" {
   }
   trusted_entity        = aws_iam_role.aft_admin_role.arn
   aft_admin_session_arn = local.aft_admin_assumed_role_arn
-
+  service_role_name     = "AWSAFTService"
 }

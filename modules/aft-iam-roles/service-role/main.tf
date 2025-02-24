@@ -15,7 +15,9 @@ variable "trusted_entity_type" {
 }
 
 variable "service_role_name" {
-  default = "AWSAFTService"
+  description = "Name of the service role to create"
+  type        = string
+  default     = "AWSAFTService"
 }
 
 variable "trusted_entity" {

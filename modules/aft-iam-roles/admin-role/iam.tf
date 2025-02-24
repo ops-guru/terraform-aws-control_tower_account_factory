@@ -6,7 +6,9 @@ variable "trusted_entity_type" {
 }
 
 variable "role_name" {
-  default = "AWSAFTExecution"
+  description = "Name of the execution role to create"
+  type        = string
+  default     = "AWSAFTExecution"
 }
 
 variable "trusted_entity" {
